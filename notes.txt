@@ -1,1 +1,114 @@
-Initial commit
+
+1. Relative units and percentages^
+2. Line height property
+3. Media Queries
+4. Mobile-first CSS
+
+
+1. Relative units and percentages
+
+Percentages: flexible containers and images
+Rem: font-size
+Em: margins and paddings - based on element's font-size
+- top and bottom: 0.5em, left and right: 1em;
+Unitless: line-height.
+Px: max-width for containers and images
+
+
+- Absolute units lkike pixels will always appear the same size no matter in which screen you view them.
+
+- Relative units are relative to another value. They are dynamic and flexible which can also be resized and rescaled.
+
+
+
+A. Percentages
+
+- Percentages, when using this, the percentage will always be based on the width of its parent element.
+- Use percentage value for the width of the containers and images
+- Use max-width property to containers ands so it won't grow more than the max-width as you zoom in and out
+
+Lesson: Images are inline displayed
+- If you want to center an image, make sure you change the display to block. Use margin: 0 auto;
+
+
+B. Em unit
+
+- 1em is equal to the parent element's font-size value.
+- If the closest ancestor has no size value, the element with the 1em unit will inherit the default browser font-size which is 16px
+
+! use em for font sizes, relative to parent's or default font-size
+! use em for margins and paddings, relative to the element's current font-size 
+! Padding for links and buttons: top and bottom: 0.5em, left and right: 1em;
+
+C. Rem Unit (Root Em) 
+! Use for font-sizes (no compounding, more predictable)
+- is always relative to the root element (16px) and not to the parent or the font-size of the current element. 
+
+
+
+2. Line height property
+- you use this to set the height distances between texts.
+- Set line-height at approx 1.5 times the font-size.
+- body line-height is relative to the root font-size.
+- Elements like h1 or h2 with a specific font-size will be the basis of their line-height and not the root font-size.  
+
+
+
+3. Media Queries
+
+
+
+@media (max-width: 800px) {
+     body{
+      color: white;
+      background-color: black;
+     } 
+}
+
+@media (min-width: 500px) and (max-width: 799px){
+    body{
+      color: whitesmoke;
+      background-color: black;  
+    }
+}
+
+
+
+4. Mobile-First
+
+- Optimizing the experience for mobile users and putting their needs first
+- write base CSS with mobile devices in mind First
+- adjust the layout later for bigger screens
+- there are more mobile users than desktop users
+- DRYer code
+- More optimized CSS
+
+Common Breakpoints
+
+- 480
+- 768
+- 1024
+- 1280 
+
+A. Buttons for smaller screens
+- will be block level elements, increase the size.
+
+B. Responsive Text
+- bigger in mobile
+
+C. Responsive Navigation
+<nav>
+      <ul>
+            <li><a href="#">Buy</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Explore</a></li>
+      </ul>
+</nav>
+
+CSS Pseudo-Property not()
+
+li:not(:last-child) {
+    border-bottom: 1px dotted #a190b6;
+}
+
+! you cannot apply padding to inline elements
