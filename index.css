@@ -131,6 +131,18 @@ body {
     border: 1px solid black;
   }
 
+  .section-two-image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    
+    
+}
+
+.feature-item{
+    flex: 1 220px;
+}
+
   /* NAVIGATION  */
   nav a {
     color: #fff;
@@ -150,7 +162,7 @@ ul {
 
   /* MEDIA QUERIES */
 
-  @media(min-width: 480px){
+  /* @media(min-width: 480px){
     .section-two-image-container {
         display: flex;
         flex-direction: row;
@@ -160,6 +172,14 @@ ul {
     .feature-image {
         width: 48.8%;
     }
+  } */
+
+  @media(min-width: 490px){
+    .btn {
+        margin: 0 0.5em 1em 0;
+        display: inline-block;
+    }
+
   }
 
   @media(max-width: 767px){
@@ -183,11 +203,6 @@ ul {
     section,
     footer{
         padding: 2.875em 0; 
-    }
-
-    .btn {
-        margin: 0 0.5em 1em 0;
-        display: inline-block;
     }
 
     h1{

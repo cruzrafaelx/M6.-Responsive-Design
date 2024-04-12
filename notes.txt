@@ -3,6 +3,8 @@
 2. Line height property
 3. Media Queries
 4. Mobile-first CSS
+5. Meta Tag
+6. Flexbox Image Grid
 
 
 1. Relative units and percentages
@@ -112,3 +114,32 @@ li:not(:last-child) {
 }
 
 ! you cannot apply padding to inline elements
+
+
+5. Viewport Meta Tag
+
+The viewport meta tag is an HTML meta tag that allows web developers to control the layout and scaling of a webpage on different devices and screen sizes. It's particularly important for creating responsive web designs that adapt well to various devices like smartphones, tablets, and desktop computers.
+
+Developers can further customize the viewport meta tag based on their specific design needs, such as setting minimum and maximum scale values, enabling user-scalable, and more. This tag is crucial for ensuring that websites look and function properly across a wide range of devices and screen sizes.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+6. Flexbox Image Grid
+
+display: flex;
+flex-wrap: wrap;
+
+With flex-wrap you can also use:
+a. flex-basis - sets the initial size of a flex item
+b. flex-grow - lets the flex items consume the remaining spaces. 
+
+.pet-item {
+    flex-basis: 200px;
+    flex-grow: 1;
+}
+
+You can also use the flex shorthand:
+
+.pet-item {
+    flex: 1 200px; 
+}
