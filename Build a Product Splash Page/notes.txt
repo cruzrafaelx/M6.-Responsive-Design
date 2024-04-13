@@ -30,3 +30,28 @@ text-transform: uppercase;
 - Pseudo class :focus: border, background-color
 - they do not inherint font-family so use:
 - font-family: inherit;
+
+5. Modifier Classes
+- Second class that you declare to an element to add specific designs other than the base design that the first class does.
+- This makes your CSS more reusable and flexible. 
+
+<button class="btn btn-primary">
+
+6. Reordering flex items
+
+.tube{
+      order: -1;
+}
+
+The order value is 0 by default. So if you want to move it to left, you use negative numbers. To the right, would be positive.
+
+7. max-width
+- apply max-width to containers to prevent stretching of items.
+
+8. CSS box-sizing
+
+box-sizing: border-box;
+
+- This property squeezes all the borders and the paddings into the total set size of the element. 
+- apply this to the universal selector: * 
+- use *, *::before, *::after if your website is using pseudo-elements

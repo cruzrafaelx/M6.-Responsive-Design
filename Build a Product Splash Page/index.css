@@ -1,3 +1,8 @@
+*, *::before, *::after{
+    box-sizing: border-box; 
+}
+
+
 body {
       font-family: 'Source Sans Pro', sans-serif;
       color: #404040;
@@ -17,6 +22,7 @@ body {
       text-shadow: 0 2px 2px #816fca;
       /* text-shadow: h-shadow v-shadow blur-radius color; */
       font-weight: 400;
+      order: 2;
   }
 
   h2{
@@ -27,15 +33,33 @@ body {
   span{
       text-transform: uppercase;
   }
+
+  .beta-text,
+  .top-text,
+  .subheading {
+    text-transform: uppercase;
+  }
+
   
   .beta-text { 
       font-weight: 900;
+      order: 2;
+     
   }
   
   .subheading {
       color: #575757;
       font-weight: 900;
       margin-bottom: 0.5em;
+  }
+
+  .top-text {
+    font-size: 0.875rem;
+    font-weight: 900;
+    padding-top: 0.25em;
+    border-top: 5px solid;
+    margin: 0 auto;
+    order: 0;
   }
 
   .fine-print {
@@ -51,7 +75,13 @@ body {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      padding: 2.5em 2em;
+      padding: 2.5em 2em;     
+  }
+
+  .main-content p,
+  form{
+    max-width: 450px;
+    
   }
 
   /* Intro*/
@@ -60,11 +90,12 @@ body {
       background: #9480e4 url("images/background-img.jpg");
       background-size: cover;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       text-align: center;
       min-height: 250px;
       color: #fff;
       background-color: #9480e4;
+      padding: 1.5em;
   }
   
   /* Main Content */
@@ -72,7 +103,6 @@ body {
   .main-content{
       align-items: center;
       text-align: center;
-      
   }
 
   .img-main{
@@ -107,9 +137,9 @@ input{
   }
 
   .btn{
-      background-color: #CBCDAAff;
+      
       padding: 1em 0;
-      margin-top: 1em;
+      
       border: none;
       text-transform: uppercase;
       font-size: 0.8em;
@@ -119,7 +149,14 @@ input{
       cursor: pointer;
   }
 
-  .btn:hover{
+  .btn-primary{
+    color: white;
+    background-color: #CBCDAAff;
+    margin-top: 1em;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus{
       background-color: #A1A2B4ff;
   }
 
