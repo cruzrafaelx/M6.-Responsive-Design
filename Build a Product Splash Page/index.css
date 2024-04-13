@@ -37,6 +37,13 @@ body {
       font-weight: 900;
       margin-bottom: 0.5em;
   }
+
+  .fine-print {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      color: #858585;
+  }
+
   /* Flex Containers */
 
   .intro,
@@ -79,8 +86,43 @@ body {
   }
   
   /* Form*/
-     
-  
+
+input,
+button{
+      width: 100%; 
+      border-radius: 5px;
+      font-family: inherit;
+}
+
+input{
+      margin-bottom: 0.8em;
+      padding: 0.5em;
+      border: solid 2px #d1d5db;
+  }
+
+  input:focus{
+      outline: none;
+      border-color: #8a71ec;
+      background-color: #e6e8ec;
+  }
+
+  .btn{
+      background-color: #CBCDAAff;
+      padding: 1em 0;
+      margin-top: 1em;
+      border: none;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+  }
+
+  .btn:hover{
+      background-color: #A1A2B4ff;
+  }
+
   /* Media Queries */
 
   @media(min-width: 576px){
