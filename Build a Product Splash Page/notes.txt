@@ -1,5 +1,6 @@
 - use px for image sizing
 - use rem for font sizing
+- use vw for fluid font sizing
 - use em for padding and margins
 - use min-height, max-width for containers with px
 

@@ -49,7 +49,7 @@ C. Rem Unit (Root Em)
 
 
 2. Line height property
-- you use this to set the height distances between texts.
+- you use this to set the height distances between texts. (vertical)
 - Set line-height at approx 1.5 times the font-size.
 - body line-height is relative to the root font-size.
 - Elements like h1 or h2 with a specific font-size will be the basis of their line-height and not the root font-size.  
