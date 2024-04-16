@@ -1,0 +1,96 @@
+1. Columns and Gaps
+
+display: grid;
+grid-template-columns: 5em 5em 5em; 
+- the more sizing you put, the more columns you will have.
+
+row-gap: .3em;
+column-gap: .6em;
+gap: .3em .6em; shorthand
+
+2. fr unit
+
+- short for fraction, it represents a fraction of the available space in the grid. 
+
+grid-template-columns: 1fr 1fr 1fr 1fr; 
+
+This way, the column widths will grow with the screen width. You can also use auto as a value. This way, the grid-item will only take up space that it needs.
+
+grid-template-columns: auto 1fr 1fr 1fr; 
+
+
+3. Rows and implicit grid
+
+grid-template-rows: 5em 5em;
+
+This would give the grid items 5em ONLY in the first two rows. You can also use a shorthan for both grid-template-rows and grid-template-columns:
+
+grid-template: rows / columns;
+grid-template: 5em 5em / 1fr 1fr;
+
+Term: row tracks and column tracks
+
+4. Span:  
+
+span is a css property given to a grid element that allows it to take up spaces depending on the value given to it.
+
+ grid-column: span 5;
+ grid-row: span 3;
+
+
+This line of code specifies that the grid-container should have 3 row tracks, with the respective fraction of height and two column tracs with the respective fractions of width.
+
+ .grid-container {
+    display: grid;
+    grid-template: 1fr 3fr 1fr / 1fr 2fr;
+}
+    
+
+This line of code uses the CSS property span on the header and footer selector. This allows the header and the footer to take up two column tracks instead of one. 
+
+header {
+    background-color: palegoldenrod;
+    grid-column: span 2;
+}
+nav {
+    background-color: lightcoral;
+}
+main {
+    background-color: lightgreen;
+}
+footer {
+    background-color: gold;
+    grid-column: span 2;
+}
+
+!!! When using span, you cannot rearrange the positioning of the grid elements. 
+
+
+5. Repeat Function
+
+ grid-template-columns: repeat(8, 1fr);
+    /* repeat(how many times, what to repeat) */
+
+You can also repeat the function as many times as you like and mix with different units. 
+
+grid-template-columns: repeat(4, 30px) repeat(4, 1fr); 
+
+grid-template-columns: repeat(3, 1fr) 30px 30px repeat(3, 3fr);
+
+6. Grid lines
+
+You count the lines starting with number 1. Number of lines == number of columns or rows + 1. If you count from left to right or bottom to top, you start with -1. 
+
+The code below allows the column to stretch 12 columns wide. It starts with line 1 and ends with line 13. 
+
+header {
+    background-color: palegoldenrod;
+    grid-column-start: 1;
+    grid-column-end: 13;
+}
+
+or use the shorthand:
+header {
+    background-color: palegoldenrod;
+    grid-column: 1 / 13; or 1 / -1; 
+}
