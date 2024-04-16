@@ -30,6 +30,15 @@ grid-template: 5em 5em / 1fr 1fr;
 
 Term: row tracks and column tracks
 
+
+
+3 ways to place items on the grid
+
+1. grid-row / grid-column and the span keyword
+2. grid-row / grid-column and line numbers.
+3. grid-template-areas, grid-area
+
+
 4. Span:  
 
 span is a css property given to a grid element that allows it to take up spaces depending on the value given to it.
@@ -94,3 +103,73 @@ header {
     background-color: palegoldenrod;
     grid-column: 1 / 13; or 1 / -1; 
 }
+
+If you want to swap the positions of grid elements, specify their row positioning. 
+
+
+7. Source Order Independence and Accessibility
+- keep the display order the same as the HTML order as much as possible
+- if you have to deviate, test and make sure the ekyboard navigation experience is smooth and logical. 
+
+8. Grid template areas
+
+grid-template-areas: 
+"head head head head head head head head head head head head"
+"nav nav main main main main main main main aside aside aside"
+"nav nav main main main main main main main aside aside aside"
+"nav nav main main main main main main main aside aside aside"
+"foot foot foot foot foot foot foot foot foot foot foot foot";
+
+this is where you map out the desired layout using the names of the respective grid elements. The names of the grid elements are set using the CSS property:
+
+grid-area: head;
+
+If you want to have white space within the template, use . instead of the grid-area name.
+
+"head head head head head head head head head head head head"
+"nav nav main main main main main main main aside aside aside"
+"nav nav main main main main main main main aside aside aside"
+"nav nav main main main main main main main aside aside aside"
+"... foot foot foot foot foot foot foot foot foot foot";
+
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(12, 1fr);
+    grid-template-areas: 
+        "head head head head head head head head head head head head"
+        "nav nav main main main main main main main aside aside aside"
+        "nav nav main main main main main main main aside aside aside"
+        "nav nav main main main main main main main aside aside aside"
+        "foot foot foot foot foot foot foot foot foot foot foot foot";
+}
+
+header {
+    grid-area: head;
+    background-color: palegoldenrod;
+}
+
+nav {
+    grid-area: nav;
+    background-color: lightcoral;
+}
+
+main {
+    grid-area: main;
+    background-color: lightgreen;
+}
+
+aside {
+    grid-area: aside;
+    background-color: lightgray;
+}
+
+footer {
+    grid-area: foot;
+    background-color: gold;
+}
+   

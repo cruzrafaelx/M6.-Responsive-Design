@@ -6,64 +6,103 @@ html, body {
 
 main {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1em;
+    grid-template: repeat(5, 1fr) / repeat(12, 1fr);
+    grid-template-areas: 
+    "t t t t t t t t t t t t"
+    "e e e e e e e e e e e e"
+    "n n n n n n n n n n n n"
+    "p p p p p p p p p p p p"
+    "h h h h h h h h h h h h";
+    gap: 1em;   
 }
+
+.technology {
+    grid-area: t;
+}
+
+.environment {
+    grid-area: e;
+}
+ 
+.nasa {
+    grid-area: n;
+}
+
+.physics { 
+    grid-area: p;
+}
+
+.health {
+    grid-area: h;
+}
+
+
 
 @media (min-width: 500px) {
 
     main {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template: repeat(4, 1fr) / repeat(12, 1fr);
+        grid-template-areas: 
+        "t t t t t t t t t t t t"
+        "e e e e e e n n n n n n"
+        "p p p p p p n n n n n n"
+        "h h h h h h h h h h h h";
+        gap: 1em;   
     } 
 
     .technology {
-        grid-column: span 2;
+        grid-area: t;
     }
-
+    
+    .environment {
+        grid-area: e;
+    }
+     
     .nasa {
-        grid-row: span 2;
+        grid-area: n;
     }
-   
+    
+    .physics { 
+        grid-area: p;
+    }
+    
     .health {
-         grid-column: span 2;
-    }  
+        grid-area: h;
+    }
 }
 
 @media (min-width: 870px) {
  
         main {
             display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-        }
-        
+            grid-template: repeat(2, 1fr) / repeat(12, 1fr);
+            grid-template-areas: 
+            "t t t t t t e e e n n n"
+            "p p p h h h h h h n n n";
+            gap: 1em;   
+        } 
+
         .technology {
-            grid-column: 1 / 7;
-            grid-row: 1 / 2;
-            
+            grid-area: t;
         }
         
         .environment {
-            grid-column: 7 / 10;
-            grid-row: 1 / 2;
+            grid-area: e;
         }
-         
+        
         .nasa {
-            grid-column: 10 / -1;
-            grid-row: 1 / -1/
+            grid-area: n;
         }
         
         .physics { 
-            grid-column: 1 / 4;
-            grid-row: 2 / -1;
+            grid-area: p;
         }
         
         .health {
-            grid-column: 4 / 10;
-            grid-row: 2 / -1;
+            grid-area: h;
         }
-    }
+    } 
 /* =================
     Article Card 
    ================= */
