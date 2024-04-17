@@ -4,16 +4,58 @@ html, body {
     font-family: 'Manrope', sans-serif;
 }
 
+
+/* Site Layouts */
+/* 
+Challenge:
+    1. Get the header, main, and footer 
+       into a vertical column. 
+    2. Put an em of space between them 
+       vertically.
+    3. Put an em of space above the header, 
+       below the footer, and to the left and 
+       right of all three elements.  
+    🤔 Have you learned any good techniques 
+       for creating empty rows/columns in a grid?
+    ⚠️ You do NOT need to use the 'margin' 
+       property to complete this challenge.
+    🛟 hint.md for help!
+ */
+
+    body{
+        display: grid;
+        grid-template-columns: 1em 1fr 1em;
+        gap: 1em 0;
+        grid-template-areas: 
+        ".... .... ...."
+        ".... head ...."
+        ".... main ...."
+        ".... foot ...."
+        ".... .... ....";
+    }
+    
+    .site-header{
+         grid-area: head;
+    }
+    
+    footer{
+        grid-area: foot;
+    }
+
+
+
+/* Main Element Layout */
 main {
     display: grid;
-    grid-template: repeat(5, 1fr) / repeat(12, 1fr);
+    grid-template-columns: 1fr;
     grid-template-areas: 
-    "t t t t t t t t t t t t"
-    "e e e e e e e e e e e e"
-    "n n n n n n n n n n n n"
-    "p p p p p p p p p p p p"
-    "h h h h h h h h h h h h";
-    gap: 1em;   
+    "t"
+    "e"
+    "n"
+    "p"
+    "h";
+    gap: 1em;
+    grid-area: main;   
 }
 
 .technology {
@@ -42,12 +84,12 @@ main {
 
     main {
         display: grid;
-        grid-template: repeat(4, 1fr) / repeat(12, 1fr);
+        grid-template-columns: 1fr 1fr;
         grid-template-areas: 
-        "t t t t t t t t t t t t"
-        "e e e e e e n n n n n n"
-        "p p p p p p n n n n n n"
-        "h h h h h h h h h h h h";
+        "t t"
+        "e n"
+        "p n"
+        "h h";
         gap: 1em;   
     } 
 
@@ -76,7 +118,7 @@ main {
  
         main {
             display: grid;
-            grid-template: repeat(2, 1fr) / repeat(12, 1fr);
+            grid-template-columns: repeat(9, 1fr) repeat(3, minmax(75px, 1fr));
             grid-template-areas: 
             "t t t t t t e e e n n n"
             "p p p h h h h h h n n n";

@@ -109,7 +109,7 @@ If you want to swap the positions of grid elements, specify their row positionin
 
 7. Source Order Independence and Accessibility
 - keep the display order the same as the HTML order as much as possible
-- if you have to deviate, test and make sure the ekyboard navigation experience is smooth and logical. 
+- if you have to deviate, test and make sure the keyboard navigation experience is smooth and logical. 
 
 8. Grid template areas
 
@@ -173,3 +173,44 @@ footer {
     background-color: gold;
 }
    
+
+
+9. Responsive Layout Without Media Queries
+
+A. grid-auto-rows: 75px;
+ 
+This will give all implicitly generated rows the same size. Explicite rows will not be affected by this css property. 
+
+B. auto-fit
+
+grid-template-columns: repeat(auto-fit, 100px);
+
+C. grid-auto-flow: dense
+
+Pack the grid items as densely as possible. 
+
+.grid-container {
+    display: grid;
+    grid-gap: .5em;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-auto-rows: 75px;
+    grid-auto-flow: dense;
+}
+
+.wide {
+    grid-column: span 2;
+}
+
+.tall {
+    grid-row: span 2;
+}
+
+.big {
+     grid-row: span 2;
+     grid-column: span 2;
+}
+
+D. minmax(min, max)
+- defines a size range greater than or equal to min and less than or equal to max.
+
+minmax(100px, 1fr)
